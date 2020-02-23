@@ -1,0 +1,11 @@
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set smarttab
+set smartindent
+set expandtab
+set number
+set ruler
+colorscheme peachpuff
+syntax on
+set backspace=indent,eol,start
