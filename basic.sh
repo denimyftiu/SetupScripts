@@ -7,6 +7,7 @@ sudo apt autoremove && sudo apt clean
 python3.7 -m pip install --upgrade pip
 python3.7 -m pip install virtualenv
 python3.7 -m virtualenv pwnenv
-export PATH="/home/$USER/.local/bin:$PATH"
+echo "/home/$USER/.local/bin:$PATH" >> ~/.bashrc
+source ~/.bashrc
 source pwnenv/bin/activate
 pip3.7 install pwntools
