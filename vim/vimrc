@@ -15,7 +15,6 @@ set updatetime=50
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ycm-core/YouCompleteMe'
 
