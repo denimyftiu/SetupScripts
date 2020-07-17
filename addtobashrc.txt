@@ -1,0 +1,16 @@
+#============================================================
+alias ll='ls -la'
+alias burp='/home/d3ni/BurpSuiteCommunity/BurpSuiteCommunity'
+alias ghidra='/home/d3ni/ghidra/ghidraRun'
+alias john='/home/d3ni/john/src/john/run/john'
+#============================================================
+export PATH="/home/d3ni/.npm-packages/bin:$PATH"
+export PATH="/home/d3ni/go/bin:$PATH"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin"
+export PATH="$JAVA_HOME:$PATH"
+#============================================================
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+#============================================================
+export GITROB_ACCESS_TOKEN= # this is for gitrob
