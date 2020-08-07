@@ -4,7 +4,6 @@ alias burp='/home/d3ni/BurpSuiteCommunity/BurpSuiteCommunity'
 alias ghidra='/home/d3ni/ghidra/ghidraRun'
 alias john='/home/d3ni/john/src/john/run/john'
 #============================================================
-export PATH="/home/d3ni/.npm-packages/bin:$PATH"
 export PATH="/home/d3ni/go/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin"
 export PATH="$JAVA_HOME:$PATH"
@@ -14,3 +13,13 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 #============================================================
 export GITROB_ACCESS_TOKEN= # this is for gitrob
+#============================================================
+#GIT BRANCH IN PS1
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1="${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u@\h\[\033[00m\]:\[\033[00;34m\]\w \[\e[91m\]\$(parse_git_branch) \[\033[00m\]\$ "
+#============================================================
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
