@@ -1,8 +1,8 @@
 syntax on
 
 set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set nu
@@ -15,12 +15,28 @@ set updatetime=50
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'gruvbox-community/gruvbox'
+Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
+" colorscheme gruvbox
+" let g:gruvbox_contrast_dark = 'hard'
+" colorscheme base16-gruvbox-dark-pale
+colorscheme base16-brewer
 set termguicolors
+
+" =================== Typescript =======================
+let g:typescript_indent_disable = 1
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+" =================== Typescript =======================
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:netrw_browse_split = 2
