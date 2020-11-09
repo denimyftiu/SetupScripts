@@ -1,6 +1,10 @@
 syntax on
+filetype plugin indent on
 
+set relativenumber
 set noerrorbells
+" set mouse=a
+
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -9,26 +13,37 @@ set nu
 set smartcase
 set noswapfile
 set incsearch
+set listchars=tab:→\ ,eol:↲,nbsp:␣,space:·,trail:·,extends:⟩,precedes:⟨
 " highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 set updatetime=50
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'rust-lang/rust.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'gruvbox-community/gruvbox'
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'leafgarland/typescript-vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'ntk148v/vim-horizon'
 
 call plug#end()
-
-" colorscheme gruvbox
-" let g:gruvbox_contrast_dark = 'hard'
-" colorscheme base16-gruvbox-dark-pale
-colorscheme base16-brewer
 set termguicolors
+" let ayucolor="light"
+" let ayucolor="mirage"
+" colorscheme ayu
+" let ayucolor="dark"
+
+" colorscheme horizon
+" colorscheme gruvbox
+" colorscheme base16-brewer
+" colorscheme base16-google-dark
+" colorscheme base16-horizon-dark
+colorscheme base16-synth-midnight-dark
+" colorscheme peachpuff
 
 " =================== Typescript =======================
 let g:typescript_indent_disable = 1
@@ -37,7 +52,6 @@ if !exists("g:ycm_semantic_triggers")
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
 " =================== Typescript =======================
-
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
