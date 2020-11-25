@@ -29,17 +29,20 @@ font pango:SF Mono 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec gnome-terminal
+# start a terminal in PWD of the old one.
+bindsym $mod+Return exec $HOME/.config/i3/i3_shell.sh
+# start a terminal in in ~ .
+bindsym $mod+Shift+Return exec gnome-terminal
 
 # start a google-chrome
-bindsym $mod+Tab exec google-chrome-stable --password-store=gnome
+# bindsym $mod+Tab exec google-chrome-stable --password-store=gnome
+bindsym $mod+Tab exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # Shut down
-bindsym Mod4+shift+1 exec shutdown now
+bindsym Mod4+shift+1 exec poweroff
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -161,7 +164,7 @@ bar {
         status_command i3status
         position top
 }
-
+ 
 bindsym Mod4+l exec i3lock --color "#000000"
 
 # Pulse Audio controls
@@ -172,9 +175,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -187,4 +187,3 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 for_window [class="^.*"] border pixel 2
 new_window 1pixel
-
