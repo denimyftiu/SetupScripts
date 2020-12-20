@@ -1,6 +1,7 @@
 syntax on
 filetype plugin indent on
 
+set cc=80
 set relativenumber
 set noerrorbells
 " set mouse=a
@@ -29,6 +30,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'leafgarland/typescript-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'ntk148v/vim-horizon'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 set termguicolors
@@ -51,6 +53,22 @@ if !exists("g:ycm_semantic_triggers")
   let g:ycm_semantic_triggers = {}
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
+
+let g:ale_completion_enabled = 0
+
+let g:ale_linters = { 'javascript': ['eslint'] }
+let g:ale_linters_explicit = 1
+" Write this in your vimrc file
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 1
+
+let g:ale_fixers = { 'javascript': ['eslint'] }
+let g:ale_fix_on_save = 1
+let g:ale_typescript_prettier_use_local_config = 1
+
 " =================== Typescript =======================
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:netrw_browse_split = 2

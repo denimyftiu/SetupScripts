@@ -29,3 +29,5 @@ export NVM_DIR="$HOME/.nvm"
 # bash path for i3.
 export PROMPT_COMMAND="pwd > /tmp/whereami"
 
+# addd this to ~/.profile
+feh --bg-fill /home/d3ni/Pictures/blue.jpg
