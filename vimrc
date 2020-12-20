@@ -7,7 +7,7 @@ set noerrorbells
 " set mouse=a
 
 set tabstop=4 softtabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set expandtab
 set smartindent
 set nu
@@ -35,7 +35,8 @@ Plug 'dense-analysis/ale'
 call plug#end()
 set termguicolors
 hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
-hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE" let ayucolor="light"
+hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
+" let ayucolor="light"
 " let ayucolor="mirage"
 " colorscheme ayu
 " let ayucolor="dark"
