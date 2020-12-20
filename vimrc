@@ -34,7 +34,7 @@ Plug 'dense-analysis/ale'
 
 call plug#end()
 set termguicolors
-hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
+hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#000000 gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 " let ayucolor="light"
 " let ayucolor="mirage"
@@ -71,6 +71,9 @@ let g:ale_fixers = { 'javascript': ['eslint'] }
 let g:ale_fix_on_save = 1
 let g:ale_typescript_prettier_use_local_config = 1
 
+let g:ale_set_signs = 0
+highlight ALEError ctermbg=none cterm=underline guibg=#204a87 gui=NONE
+highlight ALEWarning ctermbg=none cterm=underline guibg=#204a87 gui=NONE
 " =================== Typescript =======================
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:netrw_browse_split = 2
