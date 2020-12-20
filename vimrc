@@ -6,7 +6,7 @@ set relativenumber
 set noerrorbells
 " set mouse=a
 
-set tabstop=2 softtabstop=2
+set tabstop=4 softtabstop=4
 set shiftwidth=2
 set expandtab
 set smartindent
@@ -34,7 +34,8 @@ Plug 'dense-analysis/ale'
 
 call plug#end()
 set termguicolors
-" let ayucolor="light"
+hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#64666d gui=NONE
+hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE" let ayucolor="light"
 " let ayucolor="mirage"
 " colorscheme ayu
 " let ayucolor="dark"
@@ -44,7 +45,7 @@ set termguicolors
 " colorscheme base16-brewer
 " colorscheme base16-google-dark
 " colorscheme base16-horizon-dark
-colorscheme base16-synth-midnight-dark
+" colorscheme base16-synth-midnight-dark
 " colorscheme peachpuff
 
 " =================== Typescript =======================
