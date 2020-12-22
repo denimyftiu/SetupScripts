@@ -15,8 +15,6 @@ set smartcase
 set noswapfile
 set incsearch
 set listchars=tab:→\ ,eol:↲,nbsp:␣,space:·,trail:·,extends:⟩,precedes:⟨
-" highlight ColorColumn ctermbg=0 guibg=lightgrey
-
 set updatetime=50
 
 call plug#begin('~/.vim/plugged')
@@ -33,7 +31,7 @@ Plug 'ntk148v/vim-horizon'
 Plug 'dense-analysis/ale'
 
 call plug#end()
-set termguicolors
+" set termguicolors
 hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#000000 gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 " let ayucolor="light"
@@ -82,7 +80,10 @@ let g:netrw_winsize = 25
 let mapleader = " "
 let g:ctrlp_use_caching = 0
 
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_add_preview_to_completeopt = 0
+set completeopt-=preview
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 1
 " python stuff dont touch
 let g:ycm_python_interpreter_path = ''
 let g:ycm_python_sys_path = []
