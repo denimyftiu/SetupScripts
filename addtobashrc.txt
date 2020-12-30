@@ -1,5 +1,6 @@
 #============================================================
 alias ll='ls -la'
+xclip -selection c
 alias burp='/home/d3ni/BurpSuiteCommunity/BurpSuiteCommunity'
 alias ghidra='/home/d3ni/ghidra/ghidraRun'
 alias john='/home/d3ni/john/src/john/run/john'
