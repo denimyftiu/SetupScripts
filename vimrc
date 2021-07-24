@@ -4,7 +4,7 @@ filetype plugin indent on
 set cc=80
 set relativenumber
 set noerrorbells
-set mouse=a
+" set mouse=a
 
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -19,19 +19,21 @@ set updatetime=50
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'jremmen/vim-ripgrep'
+Plug 'rust-lang/rust.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'gruvbox-community/gruvbox'
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe', { 'commit': '6d877784'}
 Plug 'leafgarland/typescript-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'ntk148v/vim-horizon'
 Plug 'dense-analysis/ale'
-Plug 'jremmen/vim-ripgrep'
 
 call plug#end()
 " set termguicolors
+set background=dark
 hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#000000 gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 " let ayucolor="light"
@@ -46,7 +48,6 @@ hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 " colorscheme base16-horizon-dark
 " colorscheme base16-synth-midnight-dark
 " colorscheme peachpuff
-" =================== Quick Refactor for global replace ==================
 let g:qf_modifiable = 1
 " =================== Typescript =======================
 let g:typescript_indent_disable = 1
@@ -83,8 +84,6 @@ let g:ctrlp_use_caching = 0
 
 let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
-let g:ycm_hover_popup = -1
-let g:ycm_auto_hover = -1
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 1
 " python stuff dont touch
@@ -94,8 +93,6 @@ let g:ycm_extra_conf_vim_data = ['g:ycm_python_interpreter_path', 'g:ycm_python_
 let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
 " python stuff dont touch
 
-noremap <F5> :set list!<CR>
-
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
@@ -104,5 +101,5 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <silent> <Leader>+ :vertical resize +10<CR>
 nnoremap <silent> <Leader>- :vertical resize -10<CR>
 
-nnoremap <leader>gd :YcmCompleter GoTo <CR>
+nnoremap <leader>gd :YcmCompleter GoToDefinition <CR>
 nnoremap <leader>gr :YcmCompleter GoToReferences <CR>

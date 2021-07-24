@@ -26,15 +26,12 @@ set shortmess+=c
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'fatih/vim-go'
 Plug 'jremmen/vim-ripgrep'
 Plug 'rust-lang/rust.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'gruvbox-community/gruvbox'
-Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'ayu-theme/ayu-vim'
-Plug 'ntk148v/vim-horizon'
 Plug 'dense-analysis/ale'
 
 call plug#end()
@@ -43,17 +40,6 @@ set background=dark
 hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE guifg=NONE guibg=#000000 gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE guifg=NONE guibg=#204a87 gui=NONE
 " let ayucolor="light"
-" let ayucolor="mirage"
-" colorscheme ayu
-" let ayucolor="dark"
-
-" colorscheme horizon
-" colorscheme gruvbox
-" colorscheme base16-brewer
-" colorscheme base16-google-dark
-" colorscheme base16-horizon-dark
-" colorscheme base16-synth-midnight-dark
-" colorscheme peachpuff
 let g:qf_modifiable = 1
 let g:ale_completion_enabled = 0
 
